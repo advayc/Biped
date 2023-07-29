@@ -1,4 +1,4 @@
-# robot-shenanigans
+# Walking Robot
 using multiple servo motors, custom arduino nano board and ATMEGA 328P to make a walking robot 
 
 
