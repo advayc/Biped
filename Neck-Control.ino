@@ -60,10 +60,10 @@ int main()
   }
   void home_position()
   {
-    right_hip = 166;
+    right_hip = 70;
     right_foot = 40;
-    left_hip = 166;
-    left_foot = 70;
+    left_hip = 40;
+    left_foot = 90;
     left_hand = 140;
     right_hand = 40;    
   }
