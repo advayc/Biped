@@ -65,18 +65,15 @@ void convert()
     count_angle5 = right_hand + 46;
     _delay_us(1500); 
   }
-
-  
   void home_position()
   {
-    right_hip = 90;
-    right_foot = 90;
-    left_hip = 90;
+    right_hip = 70;
+    right_foot = 40;
+    left_hip = 40;
     left_foot = 90;
     left_hand = 140;
     right_hand = 40;    
   }
-
 ISR (TIMER1_COMPA_vect)
 {
   count++;
