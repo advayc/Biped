@@ -54,14 +54,13 @@ void convert()
   }
 void home_position()
   {
-    right_hip = 95;
-    right_foot = 10;
-    left_hip = 300;
-    left_foot = 175;
+    right_hip = 70;
+    right_foot = 40;
+    left_hip = 40;
+    left_foot = 90;
     left_hand = 140;
     right_hand = 40;    
   }
-
 ISR (TIMER1_COMPA_vect)
 {
   count++;
