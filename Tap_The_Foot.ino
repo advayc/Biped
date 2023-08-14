@@ -5,7 +5,6 @@
 #define setbit(x,y) (x |= y)
 #define checkbit(x,y) ((x) & (y))
 #define bitn(p) (0x01 << (p))
-LCD lcd;
 int count=0;
 int right_hip,count_angle, right_foot, count_angle1,
 left_hip,count_angle2, left_foot, count_angle3,
