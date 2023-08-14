@@ -3,7 +3,6 @@
 #define setbit(x,y) (x |= y)
 #define clearbit(x,y)(x &=~y)
 #define bitn(p) (0x01 << (p))
-#include <LCD.h>
 #define checkbit(x,y) ((x) & (y))
 int count, angle,angle1,count_angle,count_angle1;
 int main(void)
