@@ -1,6 +1,5 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <LCD.h>
 #define clearbit(x,y)(x &=~y)
 #define setbit(x,y) (x |= y)
 #define checkbit(x,y) ((x) & (y))
