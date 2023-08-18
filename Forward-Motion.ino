@@ -103,7 +103,7 @@ int main()
     count_angle6 = neck + 150;
     _delay_us(750);
   }
-    void home_position()
+  void home_position()
   {
     right_hip = 70;
     right_foot = 40;
