@@ -8,7 +8,7 @@
 
 1. Install [Arduino 1.8.9](https://www.arduino.cc/en/software/OldSoftwareReleases)
 2. Install the [MightyCore](https://github.com/MCUdude/MightyCore) arduino library
-3. Select the board (Arduino Nano)
+3. Select the [board and port](https://support.arduino.cc/hc/en-us/articles/4406856349970-Select-board-and-port-in-Arduino-IDE) (Arduino Nano)
 
 # Functions
 
