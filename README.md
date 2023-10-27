@@ -1,10 +1,14 @@
-# Walking Robot
-using multiple servo motors, custom arduino nano board to make a walking robot 
-
+# Circut Diagram
 
 ![image](https://github.com/advay-c/robot-shenanigans/assets/134825013/dba47502-902a-4478-b350-24b36612fbb5)
 
-Neck Servo D0
+**Neck Servo D0**
+
+# Installation
+
+1. Install [Arduino 1.8.9](https://www.arduino.cc/en/software/OldSoftwareReleases)
+2. Install the [MightyCore](https://github.com/MCUdude/MightyCore) arduino library
+3. Select the board (Arduino Nano)
 
 # Functions
 
