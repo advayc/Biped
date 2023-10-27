@@ -103,9 +103,9 @@ void convert()
   }
 void home_position()
   {
-    right_hip = 70;
-    right_foot = 40;
-    left_hip = 40;
+    right_hip = 90;
+    right_foot = 90;
+    left_hip = 90;
     left_foot = 90;
     left_hand = 140;
     right_hand = 40;    
