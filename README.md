@@ -4,6 +4,8 @@
 
 **Neck Servo D0**
 
+![Hits](https://hits-app.vercel.app/hits?url=https://github.com/advay-c/Walking-Robot-/hits&bgRight=292B2F)
+
 # Installation
 
 1. Install [Arduino 1.8.9](https://www.arduino.cc/en/software/OldSoftwareReleases)
