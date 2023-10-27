@@ -7,15 +7,16 @@
 #define bitn(p) (0x01 << (p))
 LCD lcd;
 
-int count=0;
-int right_hip,count_angle, right_foot, count_angle1,
-left_hip,count_angle2, left_foot, count_angle3,
-left_hand, count_angle4,right_hand,count_angle5,
-neck, count_angle6;
+int a = 1;
+int count = 0;
+int right_hip, count_angle, right_foot, count_angle1,
+left_hip, count_angle2, left_foot, count_angle3, 
+left_hand, count_angle4, right_hand, count_angle5;
 
-int main()
+int main() 
 {
-  DDRD = 0xFF;
+  DDRD = 0xFC;
+  DDRB = 0xFF;
   TCNT1 = 0x00;
   OCR1A = 21;
   TCCR1A = 0x00;
@@ -24,88 +25,74 @@ int main()
   SREG = 0x80;
   home_position();
   convert();
-  
-  while(1)
+
+   while (1)
+   {
+  if (a == 1)
   {
-    for (right_foot = 90; right_foot <= 130; right_foot++)
+    _delay_ms(300);
+    for (int c = 1; c<= 40; c++)
     {
+      right_hand++;
+      left_hand--;
       convert();
     }
-    for (left_foot = 90; left_foot <= 100; left_foot++)
-    {
-      convert();
-    }
-
-    for (int c = 0; c <= 20; c++)
+    _delay_ms(10);
+    for (int c = 1; c<=90; c++)
     {
       right_hip++;
-      left_hip++;
-      left_hand--;
-      right_hand--;
-      convert();
-    }
-
-    for (left_foot = 100; left_foot >= 90; left_foot--)
-    {
-      convert();
-    }
-
-    for (right_foot = 130; right_foot >= 90; right_foot--)
-    {
-      convert();
-    }
-
-    for (int c = 0; c <= 20; c++)
-    {
-      right_hip--;
       left_hip--;
-      left_hand++;
-      right_hand++;
       convert();
     }
-
-    for (left_foot = 90; left_foot >= 50; left_foot--)
+    _delay_ms(10);
+    for (int c = 1; c <= 50; c++)
     {
+      right_foot++;
+      left_foot--;
       convert();
     }
-    for (right_foot = 90; right_foot >=80; right_foot--)
-    {
-      convert();
-    }
-    for (int c = 0; <= 20; c++)
-    {
-      right_hip--;
-      left_hip--;
-      left_hand++;
-      right_hand++;
-      convert();
-    }
-    for (right_foot = 80; right_foot <= 90; right_foot++)
-    {
-      convert();
-    }
-    for (left_foot = 50; left_foot <= 90; left_foot++)
-    {
-      convert();
-    }
-    for (int c =0; c <= 20; c++)
-    {
-      right_hip++;
-      left_hip++:
-      left_hand--;
-      right_hand--;
-      convert();
-    }
-    }
+    _delay_ms(10);
+    a = 2;
   }
-    void convert()
+  for (int c = 1; c <= 20; c++)
   {
+    right_hand--;
+    left_hand++;
+    right_foot--;
+    left_foot++;
+    convert_slow();
+  }
+  _delay_ms(10);
+  for (int c = 1; c <= 20; c++)
+  {
+    right_hand++;
+    left_hand--;
+    right_foot++;
+    left_foot--;
+    convert_slow();
+  }
+  _delay_ms(10);
+  }
+} 
+void convert_slow()
+{
+  count_angle = right_hip + 46;
+  count_angle1 = right_foot + 46;
+  count_angle2 = left_hip + 46;
+  count_angle3 = left_foot + 46;
+  count_angle4 = left_hand + 46;
+  count_angle5 = right_hand + 46;
+  _delay_us(3500);
+}
+      void convert()
+  {
+    count_angle = right_hip + 46;
     count_angle1 = right_foot + 46;
+    count_angle2 = left_hip + 46;
     count_angle3 = left_foot + 46;
     count_angle4 = left_hand + 46;
     count_angle5 = right_hand + 46;
-    count_angle6 = neck + 150;
-    _delay_us(750);
+    _delay_us(1200);
   }
 void home_position()
   {
@@ -116,6 +103,7 @@ void home_position()
     left_hand = 140;
     right_hand = 40;    
   }
+
   ISR (TIMER1_COMPA_vect)
 {
   count++;
@@ -173,12 +161,4 @@ void home_position()
  {
   clearbit (PORTD,bitn(2));
  }
-  if (count <= count_angle6)
- {
-  setbit(PORTD, bitn(0));
  }
- else if ((count > count_angle6) & (count < 1818))
- {
-  clearbit(PORTD, bitn(0));
- }
-}

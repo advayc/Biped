@@ -10,8 +10,7 @@ LCD lcd;
 int count=0;
 int right_hip,count_angle, right_foot, count_angle1,
 left_hip,count_angle2, left_foot, count_angle3,
-left_hand, count_angle4,right_hand,count_angle5,
-neck, count_angle6;
+left_hand, count_angle4,right_hand,count_angle5;
 
 int main()
 {
@@ -31,81 +30,29 @@ int main()
     {
       convert();
     }
-    for (left_foot = 90; left_foot <= 100; left_foot++)
+    for (left_foot = 90; left_foot >= 70; left_foot--)
     {
       convert();
     }
-
-    for (int c = 0; c <= 20; c++)
-    {
-      right_hip++;
-      left_hip++;
-      left_hand--;
-      right_hand--;
-      convert();
-    }
-
-    for (left_foot = 100; left_foot >= 90; left_foot--)
-    {
-      convert();
-    }
-
     for (right_foot = 130; right_foot >= 90; right_foot--)
     {
       convert();
     }
-
-    for (int c = 0; c <= 20; c++)
-    {
-      right_hip--;
-      left_hip--;
-      left_hand++;
-      right_hand++;
-      convert();
-    }
-
-    for (left_foot = 90; left_foot >= 50; left_foot--)
+    for (left_foot = 70; left_foot <= 90; left_foot++)
     {
       convert();
     }
-    for (right_foot = 90; right_foot >=80; right_foot--)
-    {
-      convert();
-    }
-    for (int c = 0; <= 20; c++)
-    {
-      right_hip--;
-      left_hip--;
-      left_hand++;
-      right_hand++;
-      convert();
-    }
-    for (right_foot = 80; right_foot <= 90; right_foot++)
-    {
-      convert();
-    }
-    for (left_foot = 50; left_foot <= 90; left_foot++)
-    {
-      convert();
-    }
-    for (int c =0; c <= 20; c++)
-    {
-      right_hip++;
-      left_hip++:
-      left_hand--;
-      right_hand--;
-      convert();
     }
     }
-  }
-    void convert()
+      void convert()
   {
+    count_angle = right_hip + 46;
     count_angle1 = right_foot + 46;
+    count_angle2 = left_hip + 46;
     count_angle3 = left_foot + 46;
     count_angle4 = left_hand + 46;
     count_angle5 = right_hand + 46;
-    count_angle6 = neck + 150;
-    _delay_us(750);
+    _delay_us(1200);
   }
 void home_position()
   {
@@ -116,6 +63,7 @@ void home_position()
     left_hand = 140;
     right_hand = 40;    
   }
+
   ISR (TIMER1_COMPA_vect)
 {
   count++;
@@ -173,12 +121,4 @@ void home_position()
  {
   clearbit (PORTD,bitn(2));
  }
-  if (count <= count_angle6)
- {
-  setbit(PORTD, bitn(0));
  }
- else if ((count > count_angle6) & (count < 1818))
- {
-  clearbit(PORTD, bitn(0));
- }
-}
