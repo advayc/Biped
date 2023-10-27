@@ -60,7 +60,7 @@ int main()
     }
     }
   }
-      void convert()
+    void convert()
   {
     count_angle = right_hip + 46;
     count_angle1 = right_foot + 46;
@@ -72,14 +72,13 @@ int main()
   }
 void home_position()
   {
-    right_hip = 177;
-    right_foot = 50;
-    left_hip = 100;
+    right_hip = 90;
+    right_foot = 90;
+    left_hip = 90;
     left_foot = 90;
     left_hand = 140;
     right_hand = 40;    
   }
-
 
   ISR (TIMER1_COMPA_vect)
 {
