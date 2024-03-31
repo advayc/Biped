@@ -38,28 +38,12 @@ int main()
       convert();
     }
     _delay_ms(10);
-    for (int c = 1; c<=90; c++)
-    {
-      right_hip++;
-      left_hip--;
-      convert();
-    }
-    _delay_ms(10);
-    for (int c = 1; c <= 50; c++)
-    {
-      right_foot++;
-      left_foot--;
-      convert();
-    }
-    _delay_ms(10);
     a = 2;
   }
   for (int c = 1; c <= 20; c++)
   {
     right_hand--;
     left_hand++;
-    right_foot--;
-    left_foot++;
     convert_slow();
   }
   _delay_ms(10);
@@ -67,8 +51,6 @@ int main()
   {
     right_hand++;
     left_hand--;
-    right_foot++;
-    left_foot--;
     convert_slow();
   }
   _delay_ms(10);
@@ -82,7 +64,7 @@ void convert_slow()
   count_angle3 = left_foot + 46;
   count_angle4 = left_hand + 46;
   count_angle5 = right_hand + 46;
-  _delay_us(3500);
+  _delay_us(350);
 }
       void convert()
   {
