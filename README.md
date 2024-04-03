@@ -1,8 +1,3 @@
-# Circut Diagram
-
-![image](https://github.com/advay-c/robot-shenanigans/assets/134825013/dba47502-902a-4478-b350-24b36612fbb5)
-
-**Neck Servo D0**
 
 ![Hits](https://hits-app.vercel.app/hits?url=https://github.com/advay-c/Walking-Robot-/hits&bgRight=292B2F)
 
